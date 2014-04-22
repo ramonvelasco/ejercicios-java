@@ -25,8 +25,7 @@ public class EJ4_01 {
          
           System.out.println("La superficie de la esfera es " + sup);
           System.out.println("El volumen de la esfera es " + vol);
-
-		
+          
 	}
 
 }
