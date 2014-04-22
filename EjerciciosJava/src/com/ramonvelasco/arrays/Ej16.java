@@ -11,11 +11,15 @@ public class Ej16 {
 		int[] fila = new int[10];
 		for(int i=0;i<fila.length;i++){ 
 			int x=(int) (100*Math.random()+1);
-      	  fila[i]= x;
+      	  fila[i]= x; 
         } 
 		
 		int max= getMaxValue(fila);
 		int min= getMinValue(fila);
+		
+		
+		Arrays.sort(fila); //ordena el array y el minimo y el maximo seran primero y ultimo de la fila
+		
 		
 		System.out.println(Arrays.toString(fila));
 		System.out.println(max) ;
@@ -24,7 +28,8 @@ public class Ej16 {
 	}
 
 	public static int getMaxValue(int[] array){  
-	      int maxValue = array[0];  
+	      int maxValue = Integer.MAX_VALUE;
+	      maxValue=array[0];  
 	      for(int i=1;i < array.length;i++){  
 	      if(array[i] > maxValue){  
 	      maxValue = array[i];  
@@ -35,7 +40,8 @@ public class Ej16 {
 	}  
 
 	public static int getMinValue(int[] array){  
-	     int minValue = array[0];  
+	     int minValue = Integer.MIN_VALUE;
+	     minValue = array[0];  
 	     for(int i=1;i<array.length;i++){  
 	     if(array[i] < minValue){  
 	     minValue = array[i];  
