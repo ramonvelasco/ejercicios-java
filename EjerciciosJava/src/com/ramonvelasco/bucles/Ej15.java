@@ -43,7 +43,7 @@ public class Ej15 {
 
 			}
 		}
-		if (count>5)
+		if (acertado)
 		{
 			System.out.println("5 intentos alcanzados") ;
 		}
