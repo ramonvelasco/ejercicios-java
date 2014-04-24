@@ -1,39 +1,46 @@
 package com.ramonvelasco.fizzbuzz;
 
+import java.util.ArrayList;
+
+import com.ramonvelasco.validadores.Buzz;
+import com.ramonvelasco.validadores.Fizz;
+import com.ramonvelasco.interfaces.IValidador;
+
 public class FizzBuzz {
 
-	public String  calcular(int num)
-	{
+
+	private ArrayList<IValidador> validadores;
+	
+	public FizzBuzz() {
+
+		validadores = new ArrayList<IValidador>();
+		validadores.add(new Fizz());
+		validadores.add(new Buzz());
+	}
+	
+	public String calcular(int num) {
 		String res = "";
 		
-		for (int i = 1; i<=num;i++)
-		{
-			res += obtenerTexto(i)+" ";
+		for (int i = 1; i <= num; i++) {
+			if (i!=1) {
+				res += " ";
+			}
+			res += obtenerTexto(i);
 		}
 		return res;
 	}
-	
-	public boolean divisor3(int num)
-	{
-		return (num%3==0);		
-	}
-	public boolean divisor5(int num)
-	{
-		return (num%5==0);		
-	}
-	public String obtenerTexto(int num)
-	{
-		String res="" ;
-		if (divisor3(num))
-		{
-			res+= "Fizz";
+
+	public String obtenerTexto(int num) {
+		String res = "";
+		
+		for (IValidador validador : this.validadores) {
+			if(validador.validar(num)) {
+				res += validador.getOutput();
+			}
 		}
-		if (divisor5(num))
-		{
-			res+= "Buzz";
-		}
-		else if (!divisor3(num))
-		{
+		
+
+		if (res.length() == 0) {
 			res = Integer.toString(num);
 		}
 		return res;

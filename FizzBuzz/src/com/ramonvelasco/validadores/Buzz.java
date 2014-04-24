@@ -1,14 +1,13 @@
 package com.ramonvelasco.validadores;
 
-public class Buzz {
+public class Buzz extends Validador {
 
-	private final String output = "Buzz";
-
-	public boolean esBuzz(int num) {
-		return num % 5 == 0;
+	public Buzz() {
+		super("Buzz");
 	}
-
-	public String textBuzz() {
-		return this.output;
+	
+	@Override
+	public boolean validar(int num) {
+		return num % 5 == 0;
 	}
 }

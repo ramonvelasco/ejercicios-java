@@ -1,13 +1,14 @@
 package com.ramonvelasco.validadores;
 
-public class Fizz {
-	private final String output = "Fizz";
+public class Fizz extends Validador {
+	
 
-	public boolean esFizz(int num) {
-		return num % 3 == 0;
+	public Fizz() {
+		super("Fizz");
 	}
-
-	public String textFizz() {
-		return this.output;
+	
+	@Override
+	public boolean validar(int num) {
+		return num % 3 == 0;
 	}
 }
