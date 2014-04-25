@@ -31,6 +31,7 @@ public class FizzBuzzTest {
 	// assertEquals("Divisores 5",true,fb.divisor5(5));
 	// assertEquals("Divisores 5",false,fb.divisor5(4));
 	// }
+	
 	@Test
 	public void testFizz() {
 		assertEquals("Fizz", "Fizz", fizz.getOutput());

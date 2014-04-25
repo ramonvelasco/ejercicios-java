@@ -1,7 +1,6 @@
 package com.ramonvelasco.validadores;
 
 public class Fizz extends Validador {
-	
 
 	public Fizz() {
 		super("Fizz");
